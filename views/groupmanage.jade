@@ -49,16 +49,16 @@ block body
 
         div(ng-show='showAddRec')
           h4 Add a new recipient to selected group
-          form.form-horizontal
+          form.form-horizontal(name = 'newRecipient')
             .control-group
               label.control-label(for='inputNewRecName') Name
               .controls
-                input(type='text', placeholder='Jane Smith', ng-model = 'newRecName', name='inputNewRecName')
+                input(type='text', placeholder='Jane Smith', ng-model = 'newRecName', name='inputNewRecName', required)
             .control-group
-              label.control-label(for='inputNewRecNumber', ngRequired = true) Phone number
+              label.control-label(for='inputNewRecNumber') Phone number
               .controls
-                input(type='text', placeholder='404-555-5555', ng-model = 'newRecNumber', name='inputNewRecNumber)
-            .controls
+                input(type='text', placeholder='404-555-5555', ng-model = 'newRecNumber', name='inputNewRecNumber', required, ng-minlength='10', ng-maxlength='10')
+            .controls(ng-show = 'newRecipient.$valid')
               button.btn(type = 'submit', ng-Click = 'addRec()') Add
             
          

@@ -65,7 +65,7 @@ function groupCtrl($scope, $resource, $http) {
 		}
 	}
 	$scope.addRec = function() {
-		//	console.log($scope.newGroup)
+			//console.log(newRecipient.$valid)
 		//$scope.groupStatus = "icon-spinner icon-spin"
 		$http.put('/api/newrec', {
 			data : {
