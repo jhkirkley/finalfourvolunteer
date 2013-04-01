@@ -29,9 +29,9 @@ app.configure(function() {
 	app.use(express.static(__dirname + '/public'));
 	app.use(express.cookieParser());
 	app.use(express.session({
-		cookie : {
-			maxAge : 60000
-		},
+		// cookie : {
+			// maxAge : 60000
+		// },
 		secret : process.env.SECRET,
 		maxAge : new Date(Date.now() + 3600000),
 		store : new MongoStore({
