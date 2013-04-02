@@ -4,13 +4,14 @@ var _ = require("underscore");
 
 var ACCOUNT_SID = process.env.TWILIO_SID;
 var AUTH_TOKEN = process.env.TWILIO_TOKEN;
-var twilio_from_numbers = [process.env.TWILIO_FROM_1, process.env.TWILIO_FROM_2, process.env.TWILIO_FROM_3, process.env.TWILIO_FROM_4, process.env.TWILIO_FROM_5];
 
 var request = require('request');
 var mongoose = require("mongoose");
 var Twit = require('twit');
 var client = require('twilio')('ACCOUNT_SID', 'AUTH_TOKEN');
 var util = require('util')
+
+var twilio_from_numbers = [process.env.TWILIO_FROM_0, process.env.TWILIO_FROM_1, process.env.TWILIO_FROM_2, process.env.TWILIO_FROM_3, process.env.TWILIO_FROM_4, process.env.TWILIO_FROM_5, process.env.TWILIO_FROM_6, process.env.TWILIO_FROM_7, process.env.TWILIO_FROM_8, process.env.TWILIO_FROM_9];
 
 var T = new Twit({
 	consumer_key : process.env.TWITTER_CONSUMER_KEY,
@@ -201,19 +202,15 @@ exports.smssend = function(req, res) {
 	var recipients = req.body.data.recipients
 	//console.log(message)
 	//console.log(recipients)
-	var i = 1;
+	var i = 0;
 	_.each(recipients, function(rec) {
+		i = rec.substr(rec.length - 1);
 		sendSMSMessage(message, rec, i)
-		i++;
-		if (i == 6) {
-			i = 1
-		}
 	})
 	res.jsonp({
 		data : 'success'
 	})
 }
-
 function sendSMSMessage(message, recipient, i) {
 	var twilio_to_number = "+1" + recipient
 	//return process.nextTick(function() {
