@@ -167,12 +167,12 @@ function twitterCtrl($scope, $resource) {
 function alertCreateCtrl($scope, $resource, $http) {
 	$scope.message = '';
 	$scope.button = 'Send Alert';
-	$scope.postTwitter = true;
+	$scope.postTwitter = false;
 	$scope.postWebsite = true;
 	$scope.postSMS = true;
 	$scope.reset = function() {
 		$scope.message = "";
-		$scope.postTwitter = true;
+		$scope.postTwitter = false;
 		$scope.postWebsite = true;
 		$scope.postSMS = true;
 		$scope.websiteStatus = "";
