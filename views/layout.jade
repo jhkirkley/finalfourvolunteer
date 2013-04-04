@@ -16,10 +16,15 @@ html(ng-app='app')
   body
     div.container-fluid
       div.media.hidden-phone
-        a.pull-left(href='/#')
-          img(src='/images/finalfour.png').media-object
-        h2 Final Four Volunteers
-        p.lead Final Four Volunteer Resources
+        a.pull-left(href='/')
+          img(src='/images/finalfourlogo.png').media-object
+        a.pull-right
+            if (typeof(user) == 'undefined')
+              a(href='/login') Login
+            else
+              | Hello #{user.username} &nbsp; | &nbsp;
+              a(href='/logout') Logout
+        p.
     div.navbar
       div.navbar-inner
         div.container-fluid
@@ -27,26 +32,19 @@ html(ng-app='app')
             span(class="icon-bar")
             span(class="icon-bar")
             span(class="icon-bar")
-          a(class="brand", href="/#").hidden-phone Final Four Volunteers
           div.nav-collapse.collapse
             ul.nav
               li
-                a(href="/") Home
+                a(href="/") HOME
               li
-                a(href="/shuttle") Shuttle
+                a(href="/shuttle") SHUTTLE
               if (typeof(user) != 'undefined')
                 li
-                  a(href="/admin") Admin
+                  a(href="/admin") ADMIN
                 li
                   a(href="/admin/groups") Manage Groups
               li
-                a(href="/map") Map
-          div.navbar-text.pull-right.hidden-phone
-            if (typeof(user) == 'undefined')
-              a(href='/login') Login
-            else
-              | Hello #{user.username} &nbsp; | &nbsp;
-              a(href='/logout') Logout							
+                a(href="/map") MAP						
     div.container-fluid(ng-cloak)
       block body
     block map
