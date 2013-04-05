@@ -15,9 +15,8 @@ html(ng-app='app')
   
   body
     div.container-fluid
-      div.media.hidden-phone
-        a.pull-left(href='/')
-          img(src='/images/finalfourlogo.png').media-object
+      div.media
+        <embed src="images/finalfourvolunteersplus.svg" type="image/svg+xml" />
         a.pull-right
             if (typeof(user) == 'undefined')
               a(href='/login') Login
