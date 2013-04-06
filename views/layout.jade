@@ -15,15 +15,16 @@ html(ng-app='app')
   
   body
     div.container-fluid
-      div.media
-        <embed src="images/finalfourvolunteersplus.svg" type="image/svg+xml"  />
-        a.pull-right
+      div
+      p.pull-right
             if (typeof(user) == 'undefined')
               a(href='/login') Login
             else
               | Hello #{user.username} &nbsp; | &nbsp;
               a(href='/logout') Logout
-        p.
+      div.container.span10
+        <embed src="images/finalfourvolunteersplus.svg" type="image/svg+xml">    
+      
     div.navbar
       div.navbar-inner
         div.container-fluid
