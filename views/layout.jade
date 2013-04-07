@@ -37,16 +37,20 @@ html(ng-app='app')
               li
                 a(href="/") HOME
               li
+                a(href="/about") ABOUT
+              li
+                a(href="/resources") RESOURCES
+              li
                 a(href="/shuttle") SHUTTLE
+              li
+                a(href="/map") MAP
               if (typeof(user) != 'undefined')
                 li
                   a(href="/admin") ADMIN
                 li
                   a(href="/admin/groups") Manage Groups
-              li
-                a(href="/map") MAP						
     div.container-fluid(ng-cloak)
-      block body
+          block content
     block map
     script(src='js/lib/angular/angular.min.js')
     script(src='js/lib/angular/angular-resource.min.js')

@@ -16,6 +16,20 @@ exports.map = function(req, res) {
 	});
 };
 
+exports.about = function(req, res) {
+	//console.log(req.user)
+	res.render('about', {
+		user : req.user
+	});
+};
+
+exports.resources = function(req, res) {
+	//console.log(req.user)
+	res.render('resources', {
+		user : req.user
+	});
+};
+
 exports.shuttle = function(req, res) {
 	//console.log(req.user)
 

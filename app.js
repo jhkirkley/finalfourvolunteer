@@ -66,6 +66,8 @@ passport.deserializeUser(Account.deserializeUser());
 
 app.get('/', routes.index);
 app.get('/map', routes.map);
+app.get('/about', routes.about);
+app.get('/resources', routes.resources);
 app.get('/shuttle', routes.shuttle);
 app.get('/register', routes.register);
 app.get('/admin', ensureLoggedIn('/login'), routes.admin);
