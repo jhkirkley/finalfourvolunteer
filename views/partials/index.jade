@@ -1,0 +1,24 @@
+extends layout
+
+block head
+  link(rel="stylesheet", href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css")
+  <!--[if lte IE 8]><link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" /><![endif]-->
+
+block scripts
+  script(src='http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js')
+  script(src="http://maps.google.com/maps/api/js?&sensor=false")
+  script(src='/js/lib/leaflet/Google.js')
+  script(src='/js/map.js')
+  script(src='/js/data/points.json')
+  
+block content
+  div.row-fluid
+ 
+    include partials/alerts
+  div.row-fluid
+  
+    include partials/highlights
+    include partials/map
+
+block scripts
+  script(src='/js/ffvol.js')

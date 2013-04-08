@@ -1,0 +1,6 @@
+.DS_Store
+.project
+.env
+createUser.js
+groupdata.csv
+sample.out
